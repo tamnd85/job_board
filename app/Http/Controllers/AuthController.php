@@ -2,37 +2,24 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Employment;
 use Illuminate\Http\Request;
 
-class EmploymentController extends Controller
+class AuthController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index(Request $request)
+    public function index()
     {
-        $filters = $request->only(
-            'search',
-            'min_salary',
-            'max_salary',
-            'experience',
-            'category'
-        );
-
-        return view('employment.index',
-        ['employments' => Employment::with('employer')->filter($filters)->get()
-        ]);
-
+        //
     }
-
 
     /**
      * Show the form for creating a new resource.
      */
     public function create()
     {
-        //
+        return view('auth.create');
     }
 
     /**
@@ -46,10 +33,9 @@ class EmploymentController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Employment $employment)
+    public function show(string $id)
     {
-        return view('employment.show',
-        ['employment' => $employment->load('employer.employments')]);
+        //
     }
 
     /**

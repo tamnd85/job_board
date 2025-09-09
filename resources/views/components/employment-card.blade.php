@@ -15,7 +15,7 @@
                 <div class="flex space-x-4">
 
                     <div>
-                        Company Name
+                        {{ $employment->employer->company_name }}
                     </div>
 
                     <div>
