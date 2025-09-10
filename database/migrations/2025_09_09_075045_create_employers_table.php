@@ -30,10 +30,15 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('employments', function(Blueprint $table) {
-            $table->dropForeignIdFor(\App\Models\Employer::class);
+        Schema::table('employments', function (Blueprint $table) {
+            // Elimina la clave foránea
+            $table->dropForeign(['employer_id']);
+
+            // Elimina la columna
+            $table->dropColumn('employer_id');
         });
 
         Schema::dropIfExists('employers');
     }
+
 };

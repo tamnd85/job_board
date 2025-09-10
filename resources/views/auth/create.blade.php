@@ -30,7 +30,8 @@
                     </a>
                 </div>
             </div>
+            <x-button type="submit" class="w-full bg-green-50">Login</x-button>
+
         </form>
-        <x-button class="w-full bg-green-50">Login</x-button>
     </x-card>
 </x-layout>
